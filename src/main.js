@@ -3,6 +3,7 @@ require("./images/link.jpg")
 require("./index.html")
 
 
-var a = () => {
-  console.log("Hello from the future!")
+var a = async () => {
+  await console.log("Hello from the future!");
+  console.log("Done");
 }

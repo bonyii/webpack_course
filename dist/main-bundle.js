@@ -161,7 +161,7 @@ eval("var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n__webpack_require__(/*! ./images/link.jpg */ \"./src/images/link.jpg\");\n\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n\nvar a = function () {\n  console.log(\"Hello from the future!\");\n};\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n__webpack_require__(/*! ./images/link.jpg */ \"./src/images/link.jpg\");\n\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n\nvar a = function () {\n  return Promise.resolve().then(function () {\n    return console.log(\"Hello from the future!\");\n  }).then(function () {\n    console.log(\"Done\");\n  });\n};\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 

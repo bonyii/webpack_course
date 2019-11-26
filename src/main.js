@@ -1,3 +1,4 @@
+require("@babel/plugin-transform-runtime")
 require("./main.css")
 require("./images/link.jpg")
 require("./index.html")

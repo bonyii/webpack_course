@@ -15,6 +15,9 @@ module.exports = {
     contentBase: "dist",
     overlay: true
   },
+  node: {
+    fs: "empty"
+  },
   module: {
     rules: [
       {

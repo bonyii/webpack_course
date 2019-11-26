@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
@@ -13,7 +14,11 @@ module.exports = {
   },
   devServer: {
     contentBase: "dist",
-    overlay: true
+    overlay: true,
+    hot: true,
+    stats: {
+      colors: true
+    }
   },
   node: {
     fs: "empty"
@@ -72,5 +77,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

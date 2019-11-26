@@ -19,8 +19,9 @@ module.exports = {
     hot: true,
     stats: {
       colors: true
-    }
+    },
   },
+  devtool: "source-map",
   node: {
     fs: "empty"
   },

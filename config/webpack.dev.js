@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
@@ -49,15 +50,6 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "file-loader",
-            options: {
-              name: "[name].html"
-            }
-          },
-          {
-            loader: 'extract-loader'
-          },
-          {
             loader: "html-loader",
             options: {
               attrs: ["img:src"]
@@ -79,6 +71,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
+    })
   ]
 };

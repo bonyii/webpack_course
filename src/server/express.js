@@ -22,5 +22,5 @@ const staticMiddelware = express.static("dist")
 server.use(staticMiddelware)
 
 server.listen(8080, () => {
-  console.log("Server is listening")
+  console.log("Server is listening!")
 })

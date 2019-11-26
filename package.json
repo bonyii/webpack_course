@@ -9,7 +9,8 @@
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.4",
     "babel-plugin-async-to-promises": "^1.0.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -21,6 +22,7 @@
     "extract-loader": "^3.1.0",
     "file-loader": "^4.3.0",
     "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
@@ -32,7 +34,7 @@
     "build:prod": "webpack --mode=production",
     "dev:build": "webpack --config=config/webpack.dev.js",
     "dev:server": "webpack-dev-server --config=config/webpack.dev.js",
-    "dev:express": "node src/server/main.js"
+    "dev:express": "nodemon --watch config --watch src/server src/server/main.js"
   },
   "keywords": [],
   "author": "",

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,18 @@ eval("var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n__webpack_require__(/*! ./images/link.jpg */ \"./src/images/link.jpg\");\n\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n\nvar a = function () {\n  return Promise.resolve().then(function () {\n    return console.log(\"Hello from the future!\");\n  }).then(function () {\n    console.log(\"Done\");\n  });\n};\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n__webpack_require__(/*! ./images/link.jpg */ \"./src/images/link.jpg\");\n\n__webpack_require__(/*! ./index.html */ \"./src/index.html\");\n\nvar a = function a() {\n  return regeneratorRuntime.async(function a$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _context.next = 2;\n          return regeneratorRuntime.awrap(console.log(\"Hello from the future!\"));\n\n        case 2:\n          console.log(\"Done\");\n\n        case 3:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  });\n};\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!***************************!*\
+  !*** multi ./src/main.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__(/*! ./src/main.js */\"./src/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/main.js?");
 
 /***/ })
 

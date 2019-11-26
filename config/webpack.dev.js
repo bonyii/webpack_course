@@ -1,8 +1,9 @@
 const path = require("path");
 
+// main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
   entry: {
-    main: "./src/main.js"
+    main: ["./src/main.js"]
   },
   mode: "development",
   output: {

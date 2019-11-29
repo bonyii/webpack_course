@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const VueLoaderPlugin = require("vue-loader-plugin")
+const VueLoaderPlugin = require("vue-loader/lib/plugin")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {

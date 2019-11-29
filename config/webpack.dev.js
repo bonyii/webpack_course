@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const VueLoaderPlugin = require("vue-loader-plugin")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
@@ -27,6 +28,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          }
+        ]
+      },
       {
         test: /\.js$/,
         use: [
@@ -81,6 +90,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"

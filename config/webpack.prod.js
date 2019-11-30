@@ -3,6 +3,7 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
 const MiniCssExtractPlutgin = require("mini-css-extract-plugin")
+const MinifyPlugin = require("babel-minify-webpack-plugin")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = (env) => {
@@ -93,7 +94,8 @@ module.exports = (env) => {
         'process.env': {
           NODE_ENV: JSON.stringify(env.NODE_ENV)
         }
-      })
+      }),
+      new MinifyPlugin()
     ]
   }
 };

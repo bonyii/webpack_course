@@ -50,6 +50,16 @@ module.exports = {
         ]
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {loader: MiniCssExtractPlutgin.loader},
+          {loader: "css-loader"},
+          {loader: "postcss-loader"},
+          {loader: "sass-loader"}
+        ]
+      },
+
+      {
         test: /\.html$/,
         use: [
           {
@@ -74,9 +84,15 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlutgin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
     })
   ]
 };

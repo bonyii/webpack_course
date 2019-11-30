@@ -6,7 +6,10 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin")
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
   entry: {
-    main: ["./src/main.js"]
+    main: [
+      '@babel/plugin-transform-runtime',
+      "webpack-hot-middleware/client?reload=true",
+      "./src/main.js"]
   },
   mode: "development",
   output: {

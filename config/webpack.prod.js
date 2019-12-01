@@ -5,6 +5,8 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin")
 const MiniCssExtractPlutgin = require("mini-css-extract-plugin")
 const MinifyPlugin = require("babel-minify-webpack-plugin")
 const UglifyPlugin = require("uglifyjs-webpack-plugin")
+const CompressPlugin = require("compression-webpack-plugin")
+const BrotliPlugin =require("brotli-webpack-plugin")
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = (env) => {
@@ -82,6 +84,13 @@ module.exports = (env) => {
               }
             }
           ]
+        },
+        {
+          test: /.md$/,
+          use: [
+            { loader: 'html-loader' },
+            { loader: 'markdown-loader' }
+          ]
         }
       ]
     },
@@ -97,7 +106,9 @@ module.exports = (env) => {
         }
       }),
       //new MinifyPlugin()
-      new UglifyPlugin()
+      new UglifyPlugin(),
+      new CompressPlugin({ algorithm: "gzip" }),
+      new BrotliPlugin()
     ]
   }
 };

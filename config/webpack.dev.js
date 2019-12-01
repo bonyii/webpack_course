@@ -2,11 +2,16 @@ const path = require("path");
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 // main: ["@babel/polyfill", "./src/main.js"]
 module.exports = {
   entry: {
     main: [
+      '@babel/plugin-transform-runtime',
+      "webpack-hot-middleware/client?reload=true",
+      "./src/main.js"],
+    other: [
       '@babel/plugin-transform-runtime',
       "webpack-hot-middleware/client?reload=true",
       "./src/main.js"]
@@ -24,6 +29,18 @@ module.exports = {
     stats: {
       colors: true
     },
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor:{
+          name: "vendor",
+          chunks: "initial",
+          minChunks: 2
+        }
+      }
+    }
   },
   devtool: "source-map",
   node: {
@@ -103,6 +120,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
+    }),
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true
     })
   ]
 };

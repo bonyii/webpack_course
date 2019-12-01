@@ -3,7 +3,8 @@
     <img src="/images/link.jpg">
     <h1>Hello Hyrule</h1>
     <ul>
-      <li v-html="post">
+      <li>{{ post.title }} - {{ post.author }}
+      <li v-html="post.__content">
       </li>
     </ul>
   </div>

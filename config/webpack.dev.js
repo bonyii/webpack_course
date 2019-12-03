@@ -19,6 +19,7 @@ module.exports = {
   mode: "development",
   output: {
     filename: "[name]-bundle.js",
+    chunkFilename: "[name].js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
@@ -121,8 +122,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
-    new BundleAnalyzerPlugin({
-      generateStatsFile: true
-    })
+    /* new BundleAnalyzerPlugin({
+     *   generateStatsFile: true
+     * }) */
   ]
 };

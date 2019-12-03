@@ -3,7 +3,7 @@
     <img src="/images/link.jpg">
     <h1>Hello Hyrule</h1>
     <ul>
-      <li>{{ post.title }} - {{ post.author }}
+      <li @click="klik">{{ post.title }} - {{ post.author }}
       <li v-html="post.__content">
       </li>
     </ul>
@@ -13,10 +13,23 @@
 <script>
 import post from './data/post.md'
 
+const getBundle = () => {
+  import(/* webpackChunkName: "lodash" */ "lodash").then( _ => {
+    console.log("imported", _);
+  })
+}
+
+
 export default {
   data: function() {
     return {
       post: post
+    }
+  },
+  methods: {
+    klik() {
+      console.log('Clicked')
+      getBundle()
     }
   }
 }
